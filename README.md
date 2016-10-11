@@ -1,6 +1,31 @@
 Practice task 1 
 ===============
 
+### Compute Hamming Distance
+
+The Hamming distance between two strings of equal length is the number of positions at 
+which the corresponding symbols are different.
+
+For example:
+```
+                        karolin         1011101         2173896
+                        kathrin         1001001         2233796
+                          ^^^             ^ ^            ^^ ^
+Hamming Distance:          3               2               3
+```
+
+##### Implementation notes
+
+If strings length is not equal - return `-1`.
+
+### Answer Bob
+
+Bob is quite strange teenager and his responses are very (very!) limited:
+* Bob answers 'Yeap.' if you ask him a question.
+* He answers 'Chill out!' if you yell at him.
+* He says 'Fine.' if you address him without actually saying anything.
+* He answers 'Whatever.' to anything else.
+
 ### Console calculator
 
 Create console calculator, that implements following operations:
