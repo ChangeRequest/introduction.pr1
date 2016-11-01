@@ -1,8 +1,7 @@
 Practice task 1 
 ===============
-
-### Compute Hamming Distance
-
+1\. Compute Hamming Distance
+---------------
 The Hamming distance between two strings of equal length is the number of positions at 
 which the corresponding symbols are different.
 
@@ -18,16 +17,16 @@ Hamming Distance:          3               2               3
 
 If strings length is not equal - return `-1`.
 
-### Answer Bob
-
+2\. Answer Bob
+----------------
 Bob is quite strange teenager and his responses are very (very!) limited:
 * Bob answers 'Yeap.' if you ask him a question.
 * He answers 'Chill out!' if you yell at him.
 * He says 'Fine.' if you address him without actually saying anything.
 * He answers 'Whatever.' to anything else.
 
-### Console calculator
-
+3\. Console calculator
+----------------
 Create console calculator, that implements following operations:
 
 * addition
