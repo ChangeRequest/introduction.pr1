@@ -1,4 +1,4 @@
-Practice task 1 
+Introduction. Practice Task 1 
 ===============
 1\. Compute Hamming Distance
 ---------------

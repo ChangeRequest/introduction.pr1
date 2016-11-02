@@ -1,4 +1,4 @@
-package school.lemon.changerequest.java.pr1;
+package school.lemon.changerequest.java.introduction.pr1;
 
 public class HammingDistance {
     public static int compute(String a, String a1) {
