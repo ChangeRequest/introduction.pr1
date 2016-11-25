@@ -1,5 +1,7 @@
 Introduction. Practice Task 1 
 ===============
+
+[![Join the chat at https://gitter.im/changerequest/introduction.pr1](https://badges.gitter.im/changerequest/introduction.pr1.svg)](https://gitter.im/changerequest/introduction.pr1?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 1\. Compute Hamming Distance
 ---------------
 The Hamming distance between two strings of equal length is the number of positions at 
