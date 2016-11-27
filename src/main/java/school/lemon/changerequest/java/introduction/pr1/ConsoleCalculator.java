@@ -6,19 +6,20 @@ import java.util.Scanner;
 public class ConsoleCalculator {
 
     public static void main(String[] args) {
-        text();
+        listOfChoises();
+        Scanner sc = new Scanner(System.in);
+        int num1, num2;
         boolean param = true;
         while (param) {
-            Scanner sc = new Scanner(System.in);
             System.out.println("Make your choice.");
             String operation = sc.next();
             operation = operation.toLowerCase();
             switch (operation) {
                 case "add":
                     System.out.println("Enter first number:");
-                    int num1 = sc.nextInt();
+                    num1 = sc.nextInt();
                     System.out.println("Enter second number:");
-                    int num2 = sc.nextInt();
+                    num2 = sc.nextInt();
                     System.out.println("Result of " + num1 + "+" + num2 + " is " + (num1 + num2));
                     continue;
                 case "sub":
@@ -43,7 +44,7 @@ public class ConsoleCalculator {
                     System.out.println("Result of " + num1 + "*" + num2 + " is " + (num1 * num2));
                     continue;
                 case "help":
-                    text();
+                    listOfChoises();
                     continue;
                 case "exit":
                     System.out.println("Bye-bye");
@@ -57,7 +58,7 @@ public class ConsoleCalculator {
         }
     }
 
-    private static void text() {
+    private static void listOfChoises() {
         System.out.println("Make your choise: ");
         System.out.println("Enter 'add' to perform addition.");
         System.out.println("Enter 'sub' to perform subtraction.");
@@ -65,5 +66,6 @@ public class ConsoleCalculator {
         System.out.println("Enter 'div' to perform division.");
         System.out.println("Enter 'exit' to exit.");
         System.out.println("Enter 'help' to see help message.");
+
     }
 }
