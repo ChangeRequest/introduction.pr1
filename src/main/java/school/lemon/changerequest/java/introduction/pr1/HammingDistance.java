@@ -5,13 +5,13 @@ public class HammingDistance {
         int c = 0;
         if (a.length() != a1.length()) {
             return -1;
-        } else {
-            for (int i = 0; i < a.length(); i++) {
-                if (a.charAt(i) != a1.charAt(i)) {
-                    c++;
-                }
+        }
+        for (int i = 0; i < a.length(); i++) {
+            if (a.charAt(i) != a1.charAt(i)) {
+                c++;
             }
         }
+
         return c;
     }
 }
