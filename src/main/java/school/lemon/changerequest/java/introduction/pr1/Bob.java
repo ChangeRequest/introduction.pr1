@@ -9,7 +9,7 @@ public class Bob {
         if (phrase == null || phrase.trim().length() == 0) {
             return "Fine";
         }
-        if (phrase.matches("^[A-Z\\p{Lu}]+[\\d\\W]*$")) { // "^[A-Z]+[\\d\\W]*$"  ("^[A-Z\\d\\W]+$") - working[A-Z0-9_]+[\\w]*"))  A-Z \d\W]+$
+        if (phrase.matches("^[A-Z\\p{Lu}]+[\\d\\W]*$")) {
                 return "Chill out!";
         }
         if (phrase.endsWith("?")) {
