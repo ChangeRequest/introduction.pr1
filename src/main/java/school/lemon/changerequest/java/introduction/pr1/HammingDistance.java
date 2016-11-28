@@ -7,17 +7,18 @@ public class HammingDistance {
 
         int lengthA = a.length();
         int lengthA1 = a1.length();
-        int number = 0; //Different
+
+        int hammingDistance = 0; //Different
         if (lengthA == lengthA1) {
             for (int i = 0; i < lengthA; i++) {
                 if (a.charAt(i) != a1.charAt(i)) {
-                    number++;
+                    hammingDistance++;
                 }
             }
         } else {
+            System.out.println("Strings a and a1 have different length.");
             return -1;
-
         }
-        return number;
+        return hammingDistance;
     }
 }
