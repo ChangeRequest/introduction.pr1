@@ -9,12 +9,12 @@ public class ConsoleCalculator {
         listOfChoises();
         Scanner sc = new Scanner(System.in);
         String operation;
-        while (!sc.hasNext("(exit|help|div|mul|sub|add)")) {
-            System.out.println("False input, try again");
-            listOfChoises();
-            sc.next();
-        }
         while (true) {
+            while (!sc.hasNext("(exit|help|div|mul|sub|add)")) {
+                System.out.println("False input, try again");
+                listOfChoises();
+                sc.next();
+            }
             operation = sc.next().toLowerCase();
             if (operation.equals("exit")) {
                 System.out.println("Bye-bye");
@@ -25,45 +25,40 @@ public class ConsoleCalculator {
                 sc.next();
             }
             System.out.println("Enter first number:");
-            int num1;
-            while (!sc.hasNextInt()) {
-                System.out.println("Not a DIGIT!");
-                sc.next();
-            }
-            num1 = sc.nextInt();
-            sc.nextLine();
+            int num1 = readNextInt(sc);
             System.out.println("Enter second number:");
-            int num2;
-            while (!sc.hasNextInt()) {
-                System.out.println("Not a DIGIT!");
-                sc.next();
-            }
-            num2 = sc.nextInt();
-            sc.nextLine();
+            int num2 = readNextInt(sc);
             switch (operation) {
                 case "add":
                     String add = String.format("Result of %1$d" + "+" + "%2$d is %3$d", num1, num2, (num1 + num2));
                     System.out.println(add);
-                    System.out.println("Make your choice:");
-                    continue;
+                    break;
                 case "sub":
                     String sub = String.format("Result of %1$d-%2$d is %3$d", num1, num2, (num1 - num2));
                     System.out.println(sub);
-                    System.out.println("Make your choice:");
-                    continue;
+                    break;
                 case "div":
                     String div = String.format("Result of %1$d/%2$d is %3$d", num1, num2, (num1 / num2));
                     System.out.println(div);
-                    System.out.println("Make your choice:");
-                    continue;
+                    break;
                 case "mul":
                     String mul = String.format("Result of %1$d*%2$d is %3$d", num1, num2, (num1 * num2));
                     System.out.println(mul);
-                    System.out.println("Make your choice:");
+                    break;
 
             }
+            listOfChoises();
+
         }
 
+    }
+
+    private static int readNextInt(Scanner sc) {
+        while (!sc.hasNextInt()) {
+            System.out.println("Not a DIGIT!");
+            sc.next();
+        }
+        return sc.nextInt();
     }
 
 
@@ -79,4 +74,5 @@ public class ConsoleCalculator {
 
     }
 }
+
 
