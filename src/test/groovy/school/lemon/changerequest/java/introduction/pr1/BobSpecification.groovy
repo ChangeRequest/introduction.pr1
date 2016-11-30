@@ -26,7 +26,7 @@ class BobSpecification extends Specification {
         "Ending with ? means a question."                || "Whatever."
         "I HATE YOU"                                     || "Chill out!"
         "Wait! Hang on. Are you going to be OK?"         || "Yeap."
-        "                "                               || "Fine."
+        "              "                               || "Fine."
         ""                                               || "Fine."
     }
 }
