@@ -6,17 +6,23 @@ import java.util.Scanner;
 public class Bob {
 
     public static String hey(String phrase) {
-        if (phrase == null || phrase.trim().length() == 0) {
+        if (phrase.trim().isEmpty())
             return "Fine";
+
+        if (phrase.toUpperCase().equals(phrase)) {
+            for (char c : phrase.toCharArray()) {
+                if (Character.isLetter(c)) return "Chill out!";
+            }
+
         }
-        if (phrase.matches("^[A-Z\\p{Lu}]+[\\d\\W]*$")) {
-                return "Chill out!";
-        }
+
         if (phrase.endsWith("?")) {
-                return "Yeap.";
+            return "Yeap.";
         }
-            return "Whatever.";
-        }
+
+        return "Whatever.";
+    }
+
 
     public static void main(String[] args) {
 

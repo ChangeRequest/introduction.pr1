@@ -1,4 +1,5 @@
 package school.lemon.changerequest.java.introduction.pr1;
+
 import java.util.Scanner;
 
 public class ConsoleCalculator {
@@ -39,21 +40,19 @@ public class ConsoleCalculator {
         Scanner scanner = new Scanner(System.in);
         String request = scanner.nextLine();
         while (!request.equals("exit")) {
-               while (request.equals("help")) {
-                   System.out.println(request);
-                   System.out.println("Make your choice.");
-                   Scanner scanner1 = new Scanner(System.in);
-                   request = scanner1.nextLine();
-                  }
-               System.out.println("Enter first number:");
-               Integer firstNumber = scanner.nextInt();
-               System.out.println("Enter second number:");
-               Integer secondNumber = scanner.nextInt();
-               System.out.println(calculator(firstNumber, secondNumber, request));
-               System.out.println("Make your choice.");
-               Scanner scanner2 = new Scanner(System.in);
-               request = scanner2.nextLine();
-           }
+            if (request.equals("help")) {
+                System.out.println(request);
+            } else {
+                System.out.println("Enter first number:");
+                Integer firstNumber = scanner.nextInt();
+                System.out.println("Enter second number:");
+                Integer secondNumber = scanner.nextInt();
+                System.out.println(calculator(firstNumber, secondNumber, request));
+            }
+            System.out.println("Make your choice.");
+            Scanner scanner2 = new Scanner(System.in);
+            request = scanner2.nextLine();
+        }
         System.out.println("Bye-bye");
     }
 }
