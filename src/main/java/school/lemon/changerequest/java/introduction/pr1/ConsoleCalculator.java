@@ -17,7 +17,8 @@ public class ConsoleCalculator {
         System.out.println("Make your choice.");
 
         boolean next = true;
-
+        String resultString;
+        int result;
         do {
             Scanner scanner = new Scanner(System.in);
             String choice = scanner.nextLine();
@@ -27,45 +28,45 @@ public class ConsoleCalculator {
                     System.out.println("Bye-bye.");
                     return;
                 }
-            }
+                case "add":
+                case "sub":
+                case "mul":
+                case "div":
+                    System.out.println("Enter first number:");
+                    String firstNumber = scanner.nextLine();
+                    int firstNumberIn = Integer.valueOf(firstNumber);
 
-            System.out.println("Enter first number:");
-            Scanner scanner1 = new Scanner(System.in);
-            String firstNumber = scanner1.nextLine();
-            int firstNumberIn = Integer.valueOf(firstNumber);
+                    System.out.println("Enter second number:");
+                    String secondNumber = scanner.nextLine();
+                    int secondNumberIn = Integer.valueOf(secondNumber);
 
-            System.out.println("Enter second number:");
-            Scanner scanner3 = new Scanner(System.in);
-            String secondNumber = scanner3.nextLine();
-            int secondNumberIn = Integer.valueOf(secondNumber);
-
-            switch (choice) {
-                case "add": {
-                    int result = firstNumberIn + secondNumberIn;
-                    System.out.println("Result of " + firstNumber + "+" + secondNumber + " is " + result + ".");
+                    if (choice.equals("add")) {
+                        result = firstNumberIn + secondNumberIn;
+                        resultString = "+";
+                    } else if (choice.equals("sub")) {
+                        result = firstNumberIn - secondNumberIn;
+                        resultString = "-";
+                    } else if (choice.equals("mul")) {
+                        result = firstNumberIn * secondNumberIn;
+                        resultString = "*";
+                    } else {
+                        result = firstNumberIn / secondNumberIn;
+                        resultString = "/";
+                    }
+                    String resultFormat = String.format("Result of %1$s%2$s%3$s is %4$s.", firstNumber, resultString, secondNumber, result);
+                    System.out.println(resultFormat);
                     break;
-                }
-                case "sub": {
-                    int result = firstNumberIn - secondNumberIn;
-                    System.out.println("Result of " + firstNumber + "-" + secondNumber + " is " + result + ".");
-                    break;
-                }
-                case "mul": {
-                    int result = firstNumberIn * secondNumberIn;
-                    System.out.println("Result of " + firstNumber + "*" + secondNumber + " is " + result + ".");
-                    break;
-                }
-                case "div": {
-                    int result = firstNumberIn / secondNumberIn;
-                    System.out.println("Result of " + firstNumber + "/" + secondNumber + " is " + result + ".");
-                    break;
-                }
                 case "help": {
-                    System.out.println("What can I help you?");
+                    System.out.println("Enter 'add' to perform addition.");
+                    System.out.println("Enter 'sub' to perform subtraction.");
+                    System.out.println("Enter 'mul' to perform multiplication.");
+                    System.out.println("Enter 'div' to perform division.");
+                    System.out.println("Enter 'exit' to exit.");
                     break;
                 }
                 default: {
                     System.out.println("You made the wrong choice. Repeat.");
+                    break;
                 }
             }
             System.out.println("Make new choice.");
