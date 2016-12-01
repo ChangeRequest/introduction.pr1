@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class Bob {
 
     public static String hey(String phrase) {
-        if (phrase.trim().isEmpty())
-            return "Fine";
+
+        if (phrase.replaceAll(" ", "").equals("")) {
+            return "Fine.";
+        }
 
         if (phrase.toUpperCase().equals(phrase)) {
             for (char c : phrase.toCharArray()) {
