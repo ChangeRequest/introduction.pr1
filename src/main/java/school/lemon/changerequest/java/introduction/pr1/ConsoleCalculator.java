@@ -7,23 +7,28 @@ public class ConsoleCalculator {
 
     public static void main(String[] args) {
 
-        boolean go = true;
         Scanner userInput = new Scanner(System.in);
         operationsChoise();
-        makeChoise();
 
-        while (go) {
+        while (true) {
+            makeChoice();
+            while (!userInput.hasNext("(exit|help|div|mul|sub|add)")) {
+                System.out.println("Please, read the instruction.");
+                operationsChoise();
+                makeChoice();
+                userInput.nextLine();
+            }
 
-            String command1 = userInput.nextLine(); // поле
 
-            if (command1.equals("exit")) {
+            String command = userInput.nextLine(); // поле
+
+            if (command.equals("exit")) {
                 System.out.println("Bye-bye");
                 userInput.close();
                 break;
 
-            } else if (command1.equals("help")) {
+            } else if (command.equals("help")) {
                 operationsChoise();
-                makeChoise();
                 continue;
             }
 
@@ -34,7 +39,7 @@ public class ConsoleCalculator {
             int y = userInput.nextInt();
             userInput.nextLine();
 
-            switch (command1) {
+            switch (command) {
                 case "add":
                     int add = x + y;
                     System.out.printf("Result of %d + %d is %d \n", x, y, add);
@@ -55,7 +60,7 @@ public class ConsoleCalculator {
                     System.out.printf("Result of %d / %d is %d \n", x, y, div);
                     break;
             }
-            makeChoise();
+
         }
 
     }
@@ -70,8 +75,10 @@ public class ConsoleCalculator {
         System.out.println("Enter 'exit' to exit.");
     }
 
-    private static void makeChoise() {
+    private static void makeChoice() {
         System.out.println("Make your choice.");
     }
+
+
 }
 
